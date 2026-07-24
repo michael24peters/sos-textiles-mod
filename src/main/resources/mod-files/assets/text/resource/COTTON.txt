@@ -1,0 +1,3 @@
+NAME: "Cotton",
+NAMES: "Cotton",
+DESC: "Raw cotton fibre, harvested from Cotton Farms. Used to make Fabric.",
