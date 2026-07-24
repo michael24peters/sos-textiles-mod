@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>songs-of-syx-mod-example</artifactId>
-    <version>1.0.0</version>
+    <groupId>com.github.michael24peters</groupId>
+    <artifactId>textiles-mod</artifactId>
+    <version>0.2.0</version>
 
     <profiles>
         <profile>
@@ -123,7 +123,7 @@
         <!-- These settings will go into the mods _Info.txt file -->
         <mod.version>${project.version}</mod.version>
         <mod.name>Textiles Mod</mod.name>
-        <mod.description>Overhauls textile production with wool, flax, silk, and hemp fiber chains alongside cotton.</mod.description>
+        <mod.description>Overhauls textile production with wool, flax, silk, and hemp fiber chains, in addition to the already existing cotton.</mod.description>
         <mod.author>Michael</mod.author>
         <mod.info>Textiles</mod.info>
         <!--

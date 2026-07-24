@@ -1,0 +1,7 @@
+** partial override: adds the missing WORK/CLICK sound keys vanilla logs as
+** "no race sound by the key of: ROOM_WORK_FARM_FLAX" etc. for custom rooms.
+** Values copied from vanilla's FARM_COTTON / REFINER_WEAVER (same room shapes).
+ROOM_WORK_FARM_FLAX: impact->Dig*,
+ROOM_CLICK_FARM_FLAX: DUMMY,
+ROOM_WORK_REFINER_RETTER_FLAX: work->Machine*,
+ROOM_CLICK_REFINER_RETTER_FLAX: DUMMY,
