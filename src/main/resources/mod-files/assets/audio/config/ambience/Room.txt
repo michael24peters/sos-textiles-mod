@@ -1,0 +1,5 @@
+** partial override: adds the missing ambiance sound keys vanilla logs as
+** "no ambiance sound by the key of: ROOM_REFINER_RETTER_FLAX" for custom rooms.
+** DUMMY matches vanilla's FARM_COTTON / REFINER_WEAVER (no dedicated ambiance loop).
+ROOM_FARM_FLAX: DUMMY,
+ROOM_REFINER_RETTER_FLAX: DUMMY,
