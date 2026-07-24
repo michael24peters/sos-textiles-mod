@@ -19,7 +19,7 @@ public final class MainScript implements SCRIPT {
 	/**
 	 * This info will be displayed when starting a new game and choosing a script
 	 */
-	private final INFO info = new INFO("Example Mod", "Description goes here");
+	private final INFO info = new INFO("Textiles Mod", "Overhauls textile production with wool, flax, silk, and hemp fiber chains alongside cotton.");
 
 	@Override
 	public CharSequence name() {
@@ -37,7 +37,7 @@ public final class MainScript implements SCRIPT {
 	 */
 	@Override
 	public void initBeforeGameCreated() {
-		System.out.println("[EXAMPLE MOD] initBeforeGameCreated");
+		System.out.println("[TEXTILES MOD] initBeforeGameCreated");
 	}
 
 	/**
@@ -45,7 +45,7 @@ public final class MainScript implements SCRIPT {
 	 */
 	@Override
 	public void initBeforeGameInited() {
-		System.out.println("[EXAMPLE MOD] initBeforeGameInited");
+		System.out.println("[TEXTILES MOD] initBeforeGameInited");
 	}
 
 	/**
@@ -69,7 +69,7 @@ public final class MainScript implements SCRIPT {
 	 */
 	@Override
 	public SCRIPT_INSTANCE createInstance() {
-		System.out.println("[EXAMPLE MOD] createInstance");
+		System.out.println("[TEXTILES MOD] createInstance");
 		return new InstanceScript();
 	}
 }

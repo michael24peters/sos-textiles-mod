@@ -26,10 +26,10 @@
         <profile>
             <id>linux</id>
             <properties>
-                <game.mod.directory>${user.home}/.local/share/songsofsyx/mods</game.mod.directory>
-                <game.workshop.directory>${user.home}/.steam/steam/steamapps/workshop/content/1162750</game.workshop.directory>
-                <game.install.directory>${user.home}/.steam/steam/steamapps/common/Songs of Syx</game.install.directory>
-                <game.mod.uploader.directory>${user.home}/.local/share/songsofsyx/mods-uploader</game.mod.uploader.directory>
+                <game.mod.directory>${user.home}/.var/app/com.valvesoftware.Steam/.local/share/songsofsyx/mods</game.mod.directory>
+                <game.workshop.directory>${user.home}/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/workshop/content/1162750</game.workshop.directory>
+                <game.install.directory>${user.home}/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/Songs of Syx</game.install.directory>
+                <game.mod.uploader.directory>${user.home}/.var/app/com.valvesoftware.Steam/.local/share/songsofsyx/mods-uploader</game.mod.uploader.directory>
             </properties>
             <activation>
                 <os>
@@ -47,7 +47,7 @@
             </properties>
             <activation>
                 <os>
-                    <family>unix</family>
+                    <family>mac os x</family>
                 </os>
             </activation>
         </profile>
@@ -122,10 +122,10 @@
 
         <!-- These settings will go into the mods _Info.txt file -->
         <mod.version>${project.version}</mod.version>
-        <mod.name>Example Mod</mod.name>
-        <mod.description>This is an example mod made by Jake the game developer.</mod.description>
-        <mod.author>Jake</mod.author>
-        <mod.info>Example</mod.info>
+        <mod.name>Textiles Mod</mod.name>
+        <mod.description>Overhauls textile production with wool, flax, silk, and hemp fiber chains alongside cotton.</mod.description>
+        <mod.author>Michael</mod.author>
+        <mod.info>Textiles</mod.info>
         <!--
            This is the game version you are currently using. When the game updates:
            * Download the new game version if you don't have it

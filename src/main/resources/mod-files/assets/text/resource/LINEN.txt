@@ -1,0 +1,3 @@
+NAME: "Linen",
+NAMES: "Linen",
+DESC: "A durable fabric woven from retted Flax fibers. Used to make Clothes and Carpets.",
