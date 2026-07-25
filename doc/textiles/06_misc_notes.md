@@ -60,9 +60,9 @@ type mapped to `CATS.HUSBANDRY`. `ROOM_PASTURE.java` requires a valid
 `ANIMAL:` key resolving to a registered `animal/*.txt` entity - no way
 around this for a Husbandry-categorized room.
 
-Used for the Silkworm Breeder: added a minimal `animal/SILKWORM.txt`
-(placeholder Onx sprite, tiny mass, no danger) purely so `PASTURE_SILKWORM`
-qualifies for Husbandry.
+Used for the Silkworm Breeder: added a minimal `animal/SILKWORM.txt` purely
+so `PASTURE_SILKWORM` qualifies for Husbandry. See below for why it's no
+longer tiny/Onx-shaped.
 
 **`PASTURE_` rooms cannot consume an `IN` resource - confirmed, not just
 unverified.** Originally tried `IN: {MULBERRY: 3}` on `PASTURE_SILKWORM`,
@@ -76,6 +76,94 @@ them. If a Mulberry-feeding mechanic is wanted later, it needs a two-stage
 split (a zero-input Husbandry pasture producing an intermediate "cocoon"
 good, then a separate `REFINER_`/`WORKSHOP_` step consuming Mulberry +
 cocoons) - not attempted.
+
+## Silkworm reskinned as a "Silkcrawler" (Balticrawler-alike)
+
+The original `animal/SILKWORM.txt` (`MASS: 1`, reused Onx sprite) looked
+wrong in play: a tiny creature wandering the pasture like a full-size
+animal. Worse, `MASS: 1` turned out to be actively counterproductive - the
+pasture animal-density formula (`ROOM_PASTURE`/`PastureInstance`:
+`CLAMP.d(2.5/(mass+10), 0, 1/9)`) clamps at `1/9 ≈ 0.111` animals/tile
+regardless of how low `MASS` goes, so `MASS: 1` was already at the engine's
+maximum possible density - `PASTURE_SILKWORM` had ~2.4x *more* wandering
+creatures per tile than a same-size Onx or Globdien pen, the opposite of
+"looks small and sparse."
+
+Three fixes were investigated before landing on the current one:
+
+- **Suppress the wandering AI / render as a swarm or count-only visual.**
+  Not possible via config. Every pasture animal is spawned as a full,
+  individually-pathfinding `Animal` entity running the same hardcoded
+  `STAND`/`WALK_RANDOM`/`GRACE` states, rendered unconditionally every
+  frame (`settlement.entity.animal.Animal`). `INDOORS: true` only affects
+  room construction/fence/fertility, not animal spawning or movement.
+  `PACK`/`GRAZES` are parsed (`AnimalSpecies.java`) but read nowhere else
+  in the codebase - confirmed dead fields. Would need new Java overriding
+  `PastureInstance`/`ROOM_PASTURE`.
+- **Split into a small Husbandry breeder (producing an intermediate
+  "cocoon" stock resource) + a Refiner "Sericulture House" consuming
+  Mulberry + cocoons.** Verified mechanically sound: a Pasture's
+  `INDUSTRY.OUT` production is scaled by `animalsCurrent/animalsMax` (a
+  *fill ratio*, confirmed via `PastureInstance`'s `Animals`/`Adults`/
+  `Tending` `RoomBoost`s), not raw headcount - a small, fully-stocked pen
+  produces at full rate. This also would have cleanly revived `MULBERRY`
+  (removed earlier - see above - only because Pasture can't have `IN`; a
+  Refiner has no such restriction). Set aside in favor of the simpler,
+  single-building fix below.
+- **An Agriculture-categorized "Silk Farm" consuming Fruit + Silkworm
+  stock via `IN`.** Confirmed **not achievable through config** for two
+  independent reasons: `ROOM_FARM.java` hard-requires a `GROWABLE:` crop
+  (`RESOURCES.growable().MAP.read(...)` - a non-optional read, throws if
+  the key is missing), and `FarmInstance`/`Tile`/`Time` (the Farm room's
+  actual per-tick production logic) never reads or consumes an `IN` block
+  at all - that machinery lives entirely in the separate
+  `settlement.room.industry.module`/`RoomProduction`/`RoomConsumption`
+  classes that Refiner/Workshop rooms use. A Farm-type room *can*
+  syntactically declare `IN` without an error (unlike Pasture, which
+  explicitly rejects it in `ROOM_PASTURE.java`) - but it would just be
+  silently dead config, never consumed. Category is also hardcoded per
+  room-type-prefix in `ROOMS.java` (see above) - no way to get
+  "Agriculture" + "Refiner-style IN/OUT" without writing a whole new room
+  type in Java (the officially-documented extension path in
+  `doc/howto/make_custom_room.md`).
+
+**Landed on: reskin the animal as a "Silkcrawler," reusing vanilla
+Balticrawler's stats/sprite wholesale.** Balticrawler is already the
+closest vanilla precedent - its own flavor text calls it "huge larvae,"
+and it's the *only* vanilla animal using `INDOORS: true`. Instead of
+fighting the engine to make the creature look tiny, the fix leans into it
+being a big, lore-abstracted creature - one visible Silkcrawler represents
+a much larger farmed brood, so wandering behavior no longer reads as
+incongruous, and `MASS: 200` drops the density to a normal pasture's
+level (`2.5/210 ≈ 0.012`/tile, ~10x sparser than the old `MASS: 1`).
+
+Two things were required and verified safe via the decompiled source
+before copying Balticrawler's stats:
+- **Non-edible, guaranteed.** A dead animal's resource drop is gated
+  strictly on the animal's own `RESOURCES:` list (`Animal.java`'s
+  natural-death path, `ThingsCadavers.java`), and a Pasture's slaughter
+  payout is gated strictly on the room's own `INDUSTRIES[].OUT` block
+  (`PastureInstance.slaughterAll()`) - neither path has a hardcoded `MEAT`
+  fallback. Keeping `RESOURCES: [RAW_SILK,]` (never copying Balticrawler's
+  `[MEAT,]`) and never adding `MEAT` to the room's `OUT` makes this
+  structurally impossible to violate, independent of every other stat
+  copied from Balticrawler.
+- **Deliberately not copying Balticrawler's cave-dwelling side**
+  (`LIVES_IN_CAVES: 0.8`, cave/mountain-weighted `TERRAIN`) - shelter
+  comes from `PASTURE_SILKWORM`'s own `INDOORS: true` alone, matching real
+  silk sheds, not caves.
+- **Temperature sensitivity, modeled through the room, not the animal.**
+  Real *Bombyx mori* cultivation has a narrow optimal band (~24-28°C),
+  poor cold tolerance, and heat-stress/disease risk above ~30-35°C -
+  historically a temperate-climate craft (China), not tropical or arctic.
+  Confirmed the animal's own `CLIMATE:` key is mechanically inert for a
+  tech-locked, never-wild-spawning species - `occurence(CLIMATE)` is only
+  read by wild-spawn generation (`Animals.java`, `Generator.java`) and
+  hunting yield (`WorkHunter.java`), none of which apply here. The real
+  lever is `PASTURE_SILKWORM.txt`'s own `BONUS.CLIMATE`, which does affect
+  production - retuned so `HOT` is a penalty (`0.5`) rather than the old
+  bonus (`1.2`), `COLD` stays harsh (`0.15`), `TEMPERATE` is the clear
+  peak (`1.0`).
 
 ## Dye chain placeholder art: Herb, not Cotton
 

@@ -43,10 +43,12 @@ research); everything else is buildable from the start.
   confirmed by a crash, see [06](06_misc_notes.md)). Originally planned to
   consume `MULBERRY` from a `FARM_MULBERRY`; both were removed once that
   turned out to be unsupported. `PASTURE_SILKWORM` (Husbandry category, not
-  Refining) requires a new minimal `SILKWORM` animal entity - `PASTURE_` is
-  the only room type mapped to Husbandry, and it requires a registered
-  animal. Gated behind research (`SILK00` tech, matching Mushroom/Herb/
-  Globdien/Warbeast's pattern) - see [05](05_integration_and_tech.md).
+  Refining) requires a registered `animal/SILKWORM.txt` entity - `PASTURE_`
+  is the only room type mapped to Husbandry. That animal ("Silkcrawler" in
+  its own text) reuses vanilla Balticrawler's stats/sprite wholesale rather
+  than being genuinely tiny - see [06](06_misc_notes.md) for why. Gated
+  behind research (`SILK00` tech, matching Mushroom/Herb/Globdien/
+  Warbeast's pattern) - see [05](05_integration_and_tech.md).
 - **Dye**: `FARM_DYE` → `DYE_PLANT`.
 
 ## Consolidated processing rooms

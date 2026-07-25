@@ -162,7 +162,8 @@ worth recording:**
 | File | Proposed values |
 |---|---|
 | `resource/RAW_SILK.txt` | `DEGRADE_RATE: 0.08`, `CATEGORY_DEFAULT: 1` |
-| `room/PASTURE_SILKWORM.txt` | Zero-input (Pastures can't have `IN`, see [06](06_misc_notes.md)) - `OUT: {RAW_SILK: {PLAYER: 0.5, AI_RATE: 0.5, AI_RECOVERY: 0.5}}`; `BONUS.CLIMATE: {COLD: 0.1, TEMPERATE: 1.0, HOT: 1.2}` |
+| `room/PASTURE_SILKWORM.txt` | Zero-input (Pastures can't have `IN`, see [06](06_misc_notes.md)) - `OUT: {RAW_SILK: {PLAYER: 0.5, AI_RATE: 0.5, AI_RECOVERY: 0.5}}`; `BONUS.CLIMATE: {COLD: 0.15, TEMPERATE: 1.0, HOT: 0.5}` |
+| `animal/SILKWORM.txt` | `MASS: 200`, `HEIGHT: 5` (was `1`/`1`) - reused wholesale from vanilla Balticrawler; see [06](06_misc_notes.md#silkworm-reskinned-as-a-silkcrawler-balticrawler-alike) |
 | `resource/SILK.txt` | `DEGRADE_RATE: 0.03`, `CATEGORY_DEFAULT: 2` |
 | `room/REFINER_WEAVER.txt` (Raw Silk recipe) | `IN: {RAW_SILK: 2} OUT: {SILK: 2}` |
 | `resource/FINE_CLOTHES.txt` | `DEGRADE_RATE: 0.1`, `CATEGORY_DEFAULT: 3` |
@@ -178,6 +179,11 @@ worth recording:**
 - `SILK`'s `DEGRADE_RATE: 0.03` is lower than plant fiber's `0.05` - silk
   thread keeps better.
 - Gated behind research (`SILK00` tech) - see [05](05_integration_and_tech.md).
+- `BONUS.CLIMATE` retuned so `HOT` is a penalty (`0.5`) rather than a
+  bonus (the old `1.2`) - models real *Bombyx mori* heat sensitivity
+  (historically a temperate-climate craft, not tropical). See
+  [06](06_misc_notes.md#silkworm-reskinned-as-a-silkcrawler-balticrawler-alike)
+  for the full reasoning and the animal reskin that came with it.
 
 ### Dye
 
