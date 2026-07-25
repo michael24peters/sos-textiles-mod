@@ -1,0 +1,3 @@
+NAME: "Fine Clothes",
+NAMES: "Fine Clothes",
+DESC: "Clothes sewn from Silk. A mark of status that nobility values far more than ordinary Clothes.",

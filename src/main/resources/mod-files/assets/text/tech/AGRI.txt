@@ -1,0 +1,36 @@
+** _JSON_ADD is required here: without it, this file's top-level TECHS key
+** would wholesale-replace vanilla's TECHS object (wiping GRAI/FRUI/VEGE/
+** COTT/MUSH/HERB/SPIC/OFRU text) instead of merging our new keys into it -
+** confirmed via snake2d.util.file.JsonValue.overwrite() in the decompiled
+** game source.
+_JSON_ADD: true,
+TECHS: {
+	DYEF00: {
+		NAME: "The Dye Farm",
+		DESC: "Unlocks the construction of the Dye Farm",
+	},
+	DYEF01: {
+		NAME: "Basic Dye Cultivation",
+		DESC: "Improves the output of our Dye Farms",
+	},
+	DYEFt1: {
+		NAME: "Dye Farming Tools",
+		DESC: "Unlocks tools to be equipped for the Dye Farm. Tools must be manually equipped in the workplace.",
+	},
+	DYEF02: {
+		NAME: "Skilled Dye Cultivation",
+		DESC: "Improves the output of our Dye Farms",
+	},
+	DYEF03: {
+		NAME: "Profficient Dye Cultivation",
+		DESC: "Improves the output of our Dye Farms",
+	},
+	DYEFt2: {
+		NAME: "Advanced Dye Farming Tools",
+		DESC: "Unlocks tools to be equipped for the Dye Farm. Tools must be manually equipped in the workplace.",
+	},
+	DYEF04: {
+		NAME: "Expert Dye Cultivation",
+		DESC: "Improves the output of our Dye Farms",
+	},
+},

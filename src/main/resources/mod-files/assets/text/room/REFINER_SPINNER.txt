@@ -1,17 +1,17 @@
 INFO: {
-	NAME: "Retting Shed",
-	NAMES: "Retting Sheds",
-	DESC: "Refiner that retts and processes Flax into Linen.",
+	NAME: "Spinner",
+	NAMES: "Spinners",
+	DESC: "Spins raw Cotton or Wool into thread. Choose a recipe to run.",
 },
 
 BONUS: {
-	NAME: "Retting",
-	DESC: "Increases effectiveness of retting sheds",
+	NAME: "Spinning",
+	DESC: "Increases effectiveness of spinners",
 },
 
 WORK: {
-	TITLE: "Retter",
-	VERB: "Retting",
+	TITLE: "Spinner",
+	VERB: "Spinning",
 },
 
 STATS: [
@@ -30,7 +30,7 @@ STATS: [
 
 ITEMS: [
 	{
-		NAME: "Retting Vat",
+		NAME: "Spinning Wheel",
 		DESC: "Where subjects work",
 	},
 	{
@@ -38,7 +38,7 @@ ITEMS: [
 		DESC: "Storage for the output.",
 	},
 	{
-		NAME: "Auxiliary Vat",
+		NAME: "Auxiliary Wheel",
 		DESC: "Adds Efficiency to the room",
 	},
 ],

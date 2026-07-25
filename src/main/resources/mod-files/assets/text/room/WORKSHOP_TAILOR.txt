@@ -1,0 +1,44 @@
+INFO: {
+	NAME: "Tailor",
+	NAMES: "Tailors",
+	DESC: "Sews Clothes from Leather, Fabric, Wool Fabric, or Silk, and can dye them with Dye. Also makes Leather Armour. Choose a recipe to run.",
+},
+
+BONUS: {
+	NAME: "Tailoring",
+	DESC: "Increases effectiveness of tailors",
+},
+
+WORK: {
+	TITLE: "Tailor",
+	VERB: "Making Clothes",
+},
+
+STATS: [
+	{
+		NAME: "Workers",
+		DESC: "The amount of workers",
+	},
+	{
+		NAME: "Efficiency",
+		DESC: "Efficiency increases production",
+	},
+	{
+
+	},
+],
+
+ITEMS: [
+	{
+		NAME: "Storage",
+		DESC: "The internal storage for produce.",
+	},
+	{
+		NAME: "Work Bench",
+		DESC: "Where subjects work",
+	},
+	{
+		NAME: "Auxiliary Station",
+		DESC: "Adds Efficiency to the room",
+	},
+],

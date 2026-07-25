@@ -1,0 +1,3 @@
+NAME: "Dyed Fine Clothes",
+NAMES: "Dyed Fine Clothes",
+DESC: "Fine Clothes finished with Dye, the height of textile luxury.",

@@ -1,16 +1,16 @@
 INFO: {
-	NAME: "Flax Farm",
-	NAMES: "Flax Farms",
-	DESC: "Grows Flax.",
+	NAME: "Dye Plant Farm",
+	NAMES: "Dye Plant Farms",
+	DESC: "Grows Dye Plants for pigment.",
 },
 
 BONUS: {
-	NAME: "Flax Farming",
-	DESC: "Increases production of Flax farming.",
+	NAME: "Dye Plant Cultivation",
+	DESC: "Increases production of Dye Plant farming.",
 },
 
 WORK: {
-	TITLE: "Flax Farmer",
+	TITLE: "Farmer",
 	VERB: "Farming",
 },
 

@@ -1,3 +1,0 @@
-NAME: "Flax",
-NAMES: "Flax",
-DESC: "A fibrous plant. Once retted, its fibers can be spun into Linen.",

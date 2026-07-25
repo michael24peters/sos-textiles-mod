@@ -1,0 +1,36 @@
+** _JSON_ADD is required here: without it, this file's top-level TECHS key
+** would wholesale-replace vanilla's TECHS object (wiping HUNT/ENTL/ONX/
+** AURU/BALT/GLOB/WARB/FISH text) instead of merging our new keys into it -
+** confirmed via snake2d.util.file.JsonValue.overwrite() in the decompiled
+** game source.
+_JSON_ADD: true,
+TECHS: {
+	SILK00: {
+		NAME: "The Silkworm Breeder",
+		DESC: "Unlocks the construction of the Silkworm Breeder",
+	},
+	SILK01: {
+		NAME: "Basic Silkworm Breeding",
+		DESC: "Improves the output of our Silkworm Breeders",
+	},
+	SILKt1: {
+		NAME: "Silkworm Breeding Tools",
+		DESC: "Unlocks tools to be equipped for the Silkworm Breeder. Tools must be manually equipped in the workplace.",
+	},
+	SILK02: {
+		NAME: "Skilled Silkworm Breeding",
+		DESC: "Improves the output of our Silkworm Breeders",
+	},
+	SILK03: {
+		NAME: "Profficient Silkworm Breeding",
+		DESC: "Improves the output of our Silkworm Breeders",
+	},
+	SILKt2: {
+		NAME: "Advanced Silkworm Breeding Tools",
+		DESC: "Unlocks tools to be equipped for the Silkworm Breeder. Tools must be manually equipped in the workplace.",
+	},
+	SILK04: {
+		NAME: "Expert Silkworm Breeding",
+		DESC: "Improves the output of our Silkworm Breeders",
+	},
+},

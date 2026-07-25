@@ -1,0 +1,3 @@
+NAME: "Dye",
+NAMES: "Dye",
+DESC: "Pigment extracted from Dye Plants. Used by Tailors to produce Dyed Clothes, adding value and status over plain Clothes.",

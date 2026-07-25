@@ -1,0 +1,3 @@
+NAME: "Silk",
+NAMES: "Silk",
+DESC: "A rare, luxurious fabric woven from Raw Silk. Sewn into Fine Clothes at a Silk Tailor.",

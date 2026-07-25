@@ -1,0 +1,33 @@
+** placeholder art: reusing vanilla Onx sprite/icon until custom silkworm art is made
+** minimal creature entity - required to make PASTURE_SILKWORM a Husbandry-category room
+** (room category is hardcoded per room type, PASTURE_ is the only type under Husbandry)
+SPEED: 1,
+HEIGHT: 1,
+MASS: 1,
+DANGER: 0,
+
+ICON: 32->animal->Onx->0,
+SPRITE: Onx,
+COLOR: 255_255_255,
+LIVES_IN_CAVES: 0,
+CARAVAN: false,
+
+RESOURCES: [RAW_SILK,],
+RESOURCE_AMOUNT: [0.1,],
+
+CLIMATE: {
+	COLD: 0.1,
+	TEMPERATE: 0.9,
+	HOT: 1.0,
+},
+
+TERRAIN: {
+	NONE: 1.0,
+},
+
+PACK: false,
+GRAZES: false,
+
+DAMAGE: {
+	PIERCE: 0.01,
+},

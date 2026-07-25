@@ -1,0 +1,20 @@
+** _JSON_ADD is required here: without it, this file's top-level TECHS key
+** would wholesale-replace vanilla's TECHS object (wiping CRPT/SMIT/PAPE/
+** MASO/MECH/POTT/JEWE/TAIL/RATI/BOWY text) instead of merging our new keys
+** into it - confirmed via snake2d.util.file.JsonValue.overwrite() in the
+** decompiled game source.
+_JSON_ADD: true,
+TECHS: {
+	DYEC01: {
+		NAME: "Basic Textile Dyeing",
+		DESC: "Improves the output of our Tailors",
+	},
+	DYEC02: {
+		NAME: "Skilled Textile Dyeing",
+		DESC: "Improves the output of our Tailors",
+	},
+	DYECc0: {
+		NAME: "Textile Dyeing Excellence",
+		DESC: "Decreases consumption when dyeing textiles.",
+	},
+},

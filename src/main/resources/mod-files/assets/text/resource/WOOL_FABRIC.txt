@@ -1,0 +1,3 @@
+NAME: "Wool Fabric",
+NAMES: "Wool Fabric",
+DESC: "A warm fabric woven from Wool Thread. Used to make Clothes.",

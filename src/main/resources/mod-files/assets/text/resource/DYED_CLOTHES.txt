@@ -1,0 +1,3 @@
+NAME: "Dyed Clothes",
+NAMES: "Dyed Clothes",
+DESC: "Clothes finished with Dye. A modest status good that most citizens want a bit more of than plain Clothes.",

@@ -1,0 +1,44 @@
+INFO: {
+	NAME: "Dyer",
+	NAMES: "Dyers",
+	DESC: "Refiner that extracts Dye from Dye Plants.",
+},
+
+BONUS: {
+	NAME: "Dyeing",
+	DESC: "Increases effectiveness of dyers",
+},
+
+WORK: {
+	TITLE: "Dyer",
+	VERB: "Dyeing",
+},
+
+STATS: [
+	{
+		NAME: "Workers",
+		DESC: "The amount of workers",
+	},
+	{
+		NAME: "Efficiency",
+		DESC: "Efficiency increases production",
+	},
+	{
+
+	},
+],
+
+ITEMS: [
+	{
+		NAME: "Dye Vat",
+		DESC: "Where subjects work",
+	},
+	{
+		NAME: "Storage",
+		DESC: "Storage for the output.",
+	},
+	{
+		NAME: "Auxiliary Vat",
+		DESC: "Adds Efficiency to the room",
+	},
+],

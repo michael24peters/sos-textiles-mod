@@ -1,0 +1,3 @@
+NAME: "Cotton Thread",
+NAMES: "Cotton Thread",
+DESC: "Cotton spun into thread. Woven into Fabric at a Weaver.",
