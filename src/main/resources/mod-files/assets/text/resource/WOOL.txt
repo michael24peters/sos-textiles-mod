@@ -1,0 +1,3 @@
+NAME: "Wool",
+NAMES: "Wool",
+DESC: "Raw wool, sheared from Onx herds. Spun into Wool Thread at a Spinner.",

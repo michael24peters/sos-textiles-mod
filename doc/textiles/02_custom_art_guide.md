@@ -1,16 +1,17 @@
 # Custom Art Guide
 
-Flax v1 deliberately reuses vanilla art (Cotton's sprites for FLAX, Fabric's
-sprites for LINEN, Weaver's furniture for the Retting Shed) so the mechanics
-could be tested without blocking on art. This doc covers what real art you'd
-need per asset, and the safest way to make it.
+Every new resource/room in this mod so far deliberately reuses vanilla art
+(Cotton/Fabric/Clothes sprites, Weaver furniture) so mechanics could be
+tested without blocking on art. This doc covers what real art you'd need
+per asset, and the safest way to make it. See `doc/textiles/07_implementation_log.md`
+for the current list of placeholder-art resources/rooms still needing real
+art.
 
 ## The three asset kinds a new raw resource needs
 
 Every resource referenced by a `SPRITE:` or `ICON:` key in
 `assets/init/resource/*.txt` needs matching files under
-`assets/sprite/...`. For a growable fiber (flax, hemp, and cotton's own
-pattern), that's:
+`assets/sprite/...`. For a growable fiber (Cotton's own pattern), that's:
 
 | Purpose | Path | Real vanilla example | Actual pixel size |
 |---|---|---|---|
@@ -35,36 +36,29 @@ the slicing math yourself.
 
 ## What a refining room's art actually involves
 
-`REFINER_RETTER_FLAX.txt`'s `SPRITES:` block (copied verbatim from
-`REFINER_WEAVER.txt`) references frame indices from several shared spritesheets
-under `assets/sprite/game/combo/` (e.g. `REFINER.png`, 288 × 576 — a sheet
-shared by *all* refiner rooms, indexed by frame number per room). This is
-substantially more art than a resource icon: main machine idle/working frames,
-top overlay frames, conveyor/storage furniture, all potentially animated
-(`FPS`, `CIRCULAR`) and multi-directional (`ROTATES`).
+This mod's `REFINER_*`/`WORKSHOP_*` rooms all copy their `SPRITES:` block
+verbatim from the closest vanilla room, referencing frame indices from
+shared spritesheets under `assets/sprite/game/combo/` (e.g. `REFINER.png`,
+288 × 576 — shared by *all* refiner rooms, indexed by frame number). This is
+substantially more art than a resource icon: main machine idle/working
+frames, top overlay frames, conveyor/storage furniture, potentially
+animated (`FPS`, `CIRCULAR`) and multi-directional (`ROTATES`).
 
-Realistic options, cheapest to most expensive:
+Options, cheapest to most expensive:
 
-1. **Keep reusing vanilla furniture art** (what flax v1 does) — zero art work,
-   the building just looks like a generic loom/refinery. Fine long-term if you
-   don't mind visual reuse.
-2. **Recolor existing frames** — duplicate the relevant sheet, tint the
-   flax/hemp/wool/silk version's frames a different hue (e.g. give the Retting
-   Shed a wet/green-brown palette vs. the Weaver's warm wood tones). Cheap,
-   gives each building a distinct silhouette-adjacent identity without
-   drawing new poses.
-3. **Full custom spritesheet** — draw new frames matching the same grid
-   layout as `REFINER.png`, register a *new* sheet path, and point your room's
-   `SPRITES:` frame references at it instead of `REFINER: n`. This is real
-   pixel-art production work (multiple rotations × animation frames per
-   furniture piece) — budget for it accordingly, and only do it once the
-   mechanics are fully proven.
+1. **Keep reusing vanilla furniture art** (current state for every room) —
+   zero art work, building looks like a generic loom/refinery.
+2. **Recolor existing frames** — duplicate the sheet, tint it a different
+   hue per material. Cheap, gives each building a distinct identity without
+   new poses.
+3. **Full custom spritesheet** — new frames matching the same grid layout,
+   registered as a new sheet path. Real pixel-art production work; do this
+   only once mechanics are fully proven.
 
 ## Order of operations recommendation
 
-Given the project's "small confirmed loop" style: finish proving out *all
-four* fiber chains mechanically with placeholder/recolored art first, then do
-one dedicated art pass across all of them together. Doing real art per-material
-as you go means re-learning the spritesheet conventions four times instead of
-once, and risks throwing away art if a mechanical redesign changes which rooms
+Finish proving out all chains (Plant Fibre, Wool, Silk, Dye) mechanically
+with placeholder/recolored art first, then do one dedicated art pass across
+all of them together - avoids re-learning spritesheet conventions per
+material and avoids wasted art if a mechanical redesign changes which rooms
 exist.

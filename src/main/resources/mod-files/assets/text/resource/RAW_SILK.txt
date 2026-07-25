@@ -1,0 +1,3 @@
+NAME: "Raw Silk",
+NAMES: "Raw Silk",
+DESC: "Silk cocoons harvested and reeled at a Sericulture House. Woven into Silk at a Silk Weaver.",

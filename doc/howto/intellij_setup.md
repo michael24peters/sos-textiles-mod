@@ -152,3 +152,13 @@ They should be automatically available [in the IDE](https://www.jetbrains.com/he
 
 Run the game at first through the `MainLaunchLauncher` and enable the `Example Mod` in the launcher.
 Once the mod is enabled, you can skip the launcher by running the `Main` or `DEBUG` command.
+
+### Known issue: IntelliJ launches don't see the same mods/saves/settings as real Steam (Linux/Flatpak Steam)
+
+If Steam itself is a Flatpak install, `MainLaunchLauncher`/`Main`/`DEBUG` launched from IntelliJ can
+show up as a completely separate instance of the game — no installed mods, no saves, no synced
+settings — even though the real Steam-launched game has all of that. Tried and abandoned this
+session: setting `HOME` as an env var to the Flatpak app's data root, and adding a `steam_appid.txt`
+to the game's install directory (for the bundled Steamworks SDK). Neither fixed it. Root cause not
+found — testing mod changes for now has to go through an actual Steam launch (rebuild with
+`./mvnw clean install`, then launch normally through Steam) rather than the IntelliJ run configs.

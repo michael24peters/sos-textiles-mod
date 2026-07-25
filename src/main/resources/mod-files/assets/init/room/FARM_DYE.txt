@@ -1,13 +1,13 @@
-** placeholder art: reusing vanilla Cotton icon until custom flax art is made
+** placeholder art: reusing vanilla Herb farm icon until custom dye-plant farm art is made
 ICON: {
 	BG: 32->BG->3,
-	FG: 24->resource->Cotton->0,
+	FG: 24->resource->Herb->0,
 	SHADOW: 2,
 },
-GROWABLE: FLAX,
-RESOURCES: [FLAX,],
+GROWABLE: DYE_PLANT,
+RESOURCES: [DYE_PLANT,],
 AREA_COSTS: [0.1,],
-MINI_COLOR: 180_160_60,
+MINI_COLOR: 70_90_160,
 MINI_COLOR_PATTERN: [
 	"44444444",
 	"99999999",
@@ -17,9 +17,9 @@ MINI_COLOR_PATTERN: [
 INDOORS: false,
 INDUSTRY: {
 	OUT: {
-		FLAX: {
-			PLAYER: 3,
-			AI_RATE: 2.86,
+		DYE_PLANT: {
+			PLAYER: 2.5,
+			AI_RATE: 2.4,
 		},
 	},
 },
@@ -31,8 +31,8 @@ WORK: {
 },
 BONUS: {
 	CLIMATE: {
-		COLD: 1.25,
-		TEMPERATE: 1.5,
-		HOT: 0.5,
+		COLD: 0.8,
+		TEMPERATE: 1,
+		HOT: 0.9,
 	},
 },

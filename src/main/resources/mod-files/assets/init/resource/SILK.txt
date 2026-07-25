@@ -1,0 +1,8 @@
+** placeholder art: reusing vanilla Fabric sprite/icon until custom silk art is made
+ICON: 24->resource->Fabric->0,
+DEGRADE_RATE: 0.03,
+COLOR: 245_235_200,
+MINIMAP_COLOR: 10_10_10,
+SPRITE: Fabric,
+SPRITE_DEBRIS: Wood,
+CATEGORY_DEFAULT: 2,

@@ -1,0 +1,3 @@
+NAME: "Dye Plant",
+NAMES: "Dye Plants",
+DESC: "Plants grown for their pigment. Processed into Dye at a Dyer.",

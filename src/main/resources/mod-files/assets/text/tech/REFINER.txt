@@ -1,0 +1,63 @@
+** _JSON_ADD is required here: without it, this file's top-level TECHS key
+** would wholesale-replace vanilla's TECHS object (wiping BAKE/BREW/COAL/
+** SMEL/WEAV text) instead of merging our new keys into it - confirmed via
+** snake2d.util.file.JsonValue.overwrite() in the decompiled game source.
+_JSON_ADD: true,
+TECHS: {
+	SPIN01: {
+		NAME: "Basic Spinning",
+		DESC: "Improves the output of our Spinners",
+	},
+	SPIN02: {
+		NAME: "Skilled Spinning",
+		DESC: "Improves the output of our Spinners",
+	},
+	SPINu1: {
+		NAME: "Improved Spinner",
+		DESC: "Allows you to upgrade your Spinners. Upgrades cost resources and increases maintenance cost.",
+	},
+	SPIN03: {
+		NAME: "Profficient Spinning",
+		DESC: "Improves the output of our Spinners",
+	},
+	SPIN04: {
+		NAME: "Expert Spinning",
+		DESC: "Improves the output of our Spinners",
+	},
+	SPINu2: {
+		NAME: "Advanced Spinner",
+		DESC: "Allows you to upgrade your Spinners. Upgrades cost resources and increases maintenance cost.",
+	},
+	SPINc0: {
+		NAME: "Spinning Excellence",
+		DESC: "Decreases consumption when spinning thread.",
+	},
+	DYER01: {
+		NAME: "Basic Dyeing",
+		DESC: "Improves the output of our Dyers",
+	},
+	DYER02: {
+		NAME: "Skilled Dyeing",
+		DESC: "Improves the output of our Dyers",
+	},
+	DYERu1: {
+		NAME: "Improved Dyer",
+		DESC: "Allows you to upgrade your Dyers. Upgrades cost resources and increases maintenance cost.",
+	},
+	DYER03: {
+		NAME: "Profficient Dyeing",
+		DESC: "Improves the output of our Dyers",
+	},
+	DYER04: {
+		NAME: "Expert Dyeing",
+		DESC: "Improves the output of our Dyers",
+	},
+	DYERu2: {
+		NAME: "Advanced Dyer",
+		DESC: "Allows you to upgrade your Dyers. Upgrades cost resources and increases maintenance cost.",
+	},
+	DYERc0: {
+		NAME: "Dyeing Excellence",
+		DESC: "Decreases consumption when extracting dye.",
+	},
+},

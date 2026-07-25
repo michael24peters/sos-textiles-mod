@@ -1,34 +1,36 @@
-** placeholder art: reusing vanilla Weaver (loom) furniture sprites until custom retting-shed art is made
+** placeholder art: reusing vanilla Weaver (loom) furniture sprites until custom spinning-wheel art is made
+** single Spinner - one recipe per staple fiber, player picks which to run. Silk isn't spun (reeled), so
+** it has no recipe here - see doc/textiles/04_material_process_chains.md
 ICON: 32->REFINER->4,
-RESOURCES: [STONE,WOOD,FURNITURE,MACHINERY,],
-AREA_COSTS: [0,0,0,0,],
+RESOURCES: [STONE,WOOD,FURNITURE,],
+AREA_COSTS: [0,0,0,],
 FLOOR: [DIRT,WOOD_SQUARE,WOOD,],
-MINI_COLOR: 180_160_60,
+MINI_COLOR: 210_195_150,
 ITEMS: [
 	{
-		COSTS: [4,7,1,1,],
+		COSTS: [4,7,1,],
 		STATS: [1.0,0,1,],
 	},
 	{
-		COSTS: [5,5,0,0,],
+		COSTS: [5,5,0,],
 		STATS: [0,0,0,],
 	},
 	{
-		COSTS: [7,4,1,1,],
+		COSTS: [7,4,1,],
 		STATS: [0,1.5,0,],
 	},
 ],
 UPGRADES: [
 	{
-		RESOURCE_MASK: [1,1,0,0,],
+		RESOURCE_MASK: [1,1,0,],
 		BOOST: 0,
 	},
 	{
-		RESOURCE_MASK: [1,1,3.5,0,],
+		RESOURCE_MASK: [1,1,3.5,],
 		BOOST: 1.0,
 	},
 	{
-		RESOURCE_MASK: [1,1,4.4,1,],
+		RESOURCE_MASK: [1,1,4.4,],
 		BOOST: 2.0,
 		AI: 1.3,
 	},
@@ -36,18 +38,28 @@ UPGRADES: [
 WORK: {
 	SHIFT_OFFSET: 0.125,
 	SOUND: work->Machine*,
-	FULFILLMENT: 0.5,
-	ACCIDENTS_PER_YEAR: 0.05,
+	FULFILLMENT: 0.1,
+	ACCIDENTS_PER_YEAR: 0.0,
 },
-STORAGE: 100,
+STORAGE: 80,
 INDUSTRIES: [
 	{
 		INDUSTRY: {
 			IN: {
-				FLAX: 2,
+				COTTON: 2,
 			},
 			OUT: {
-				LINEN: 2,
+				COTTON_THREAD: 2,
+			},
+		},
+	},
+	{
+		INDUSTRY: {
+			IN: {
+				WOOL: 2,
+			},
+			OUT: {
+				WOOL_THREAD: 2,
 			},
 		},
 	},

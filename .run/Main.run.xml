@@ -1,8 +1,14 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Main" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="init.Main" />
-    <module name="songs-of-syx-mod-example" />
-    <option name="WORKING_DIRECTORY" value="C:/Program Files (x86)/Steam/steamapps/common/Songs of Syx" />
+    <module name="textiles-mod" />
+    <option name="VM_PARAMETERS" value="-Duser.home=/home/petersm/.var/app/com.valvesoftware.Steam" />
+    <option name="WORKING_DIRECTORY" value="/home/petersm/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/Songs of Syx" />
+    <envs>
+      <env name="__GL_THREADED_OPTIMIZATIONS" value="0" />
+      <env name="XDG_SESSION_TYPE" value="x11" />
+      <env name="WAYLAND_DISPLAY" value="" />
+    </envs>
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="your.mod.*" />

@@ -1,0 +1,5 @@
+INFO: {
+	NAME: "Silkworm",
+	NAMES: "Silkworms",
+	DESC: "A domesticated moth larva raised in captivity. Spins a cocoon of raw silk.",
+},
