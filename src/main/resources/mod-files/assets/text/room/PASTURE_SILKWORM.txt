@@ -1,7 +1,7 @@
 INFO: {
 	NAME: "Silkworm Breeder",
 	NAMES: "Silkworm Breeders",
-	DESC: "Raises silkworms and harvests their cocoons as Raw Silk.",
+	DESC: "Raises Silkcrawlers and harvests their cocoons as Raw Silk. Sensitive to temperature, they must be kept sheltered in stable conditions.",
 },
 
 BONUS: {

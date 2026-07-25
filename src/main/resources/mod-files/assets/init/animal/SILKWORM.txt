@@ -1,19 +1,32 @@
-** placeholder art: reusing vanilla Onx sprite/icon until custom silkworm art is made
-** minimal creature entity - required to make PASTURE_SILKWORM a Husbandry-category room
-** (room category is hardcoded per room type, PASTURE_ is the only type under Husbandry)
+** placeholder art: reusing vanilla Balticrawler sprite/icon until custom silkcrawler art is made.
+** Balticrawler is vanilla's own "huge larvae" creature - reused wholesale (MASS/HEIGHT/DAMAGE/
+** sprite) so this reads as a normal-sized wandering pasture animal instead of a full-size Onx
+** shrunk to MASS:1, which was actually the densest-possible pasture population the engine
+** allows (2.5/(mass+10) clamped to 1/9) - denser wandering sprites than any vanilla pasture,
+** the opposite of the intended effect. One visible Silkcrawler now represents a much larger
+** farmed brood.
+** NOT copying Balticrawler's cave-dwelling side (LIVES_IN_CAVES, cave/mountain TERRAIN) -
+** shelter comes from PASTURE_SILKWORM's own INDOORS:true, matching real silk sheds, not caves.
+** RESOURCES stays RAW_SILK only (never MEAT) - confirmed via decompiled source that both the
+** natural-death drop (Animal.java, gated on this list) and pasture slaughter (PastureInstance.
+** slaughterAll(), gated on the room's own OUT block) have no hardcoded MEAT fallback, so this
+** guarantees Silkcrawlers can never be eaten regardless of any other stat copied from Balticrawler.
+** CLIMATE/TERRAIN below are confirmed mechanically inert for a tech-locked, never-wild-spawning
+** species (only read by wild-spawn/hunting code) - real temperature sensitivity is modeled via
+** PASTURE_SILKWORM's own BONUS.CLIMATE instead, which does affect actual production.
 SPEED: 1,
-HEIGHT: 1,
-MASS: 1,
-DANGER: 0,
+HEIGHT: 5,
+MASS: 200,
+DANGER: 0.0,
 
-ICON: 32->animal->Onx->0,
-SPRITE: Onx,
+ICON: 32->animal->Balticrawler->0,
+SPRITE: Balticrawler,
 COLOR: 255_255_255,
 LIVES_IN_CAVES: 0,
 CARAVAN: false,
 
 RESOURCES: [RAW_SILK,],
-RESOURCE_AMOUNT: [0.1,],
+RESOURCE_AMOUNT: [0.5,],
 
 CLIMATE: {
 	COLD: 0.1,
@@ -26,8 +39,8 @@ TERRAIN: {
 },
 
 PACK: false,
-GRAZES: false,
+GRAZES: true,
 
 DAMAGE: {
-	PIERCE: 0.01,
+	PIERCE: 0.2,
 },

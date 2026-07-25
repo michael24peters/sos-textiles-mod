@@ -1,5 +1,5 @@
 INFO: {
-	NAME: "Silkworm",
-	NAMES: "Silkworms",
-	DESC: "A domesticated moth larva raised in captivity. Spins a cocoon of raw silk.",
+	NAME: "Silkcrawler",
+	NAMES: "Silkcrawlers",
+	DESC: "A large domesticated silk spinning crawler, bred exclusively for its cocoons. Its flesh is inedible, and its brood thrives only in sheltered, temperature stable conditions.",
 },

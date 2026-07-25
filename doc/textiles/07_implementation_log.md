@@ -160,6 +160,35 @@ real Cotton resource. Switched to Herb's sprite/icon throughout - full
 detail in
 [06](06_misc_notes.md#dye-chain-placeholder-art-herb-not-cotton).
 
+## Silkworm reskinned as a "Silkcrawler" (Balticrawler-alike)
+
+`animal/SILKWORM.txt`'s `MASS: 1` looked like a fix for "should look
+small," but was actually the densest population the engine's pasture
+formula allows (clamped at `1/9` animals/tile regardless of how low `MASS`
+goes) - `PASTURE_SILKWORM` had more wandering creatures per tile than any
+vanilla pasture, the opposite of the intended effect. Investigated three
+fixes (suppressing the wandering AI entirely, a two-building Husbandry-
+breeder-plus-Refiner-processor split reviving `MULBERRY`, and an
+Agriculture-categorized farm consuming `IN`) - the first and third are
+confirmed not achievable through config alone (would need new Java room-
+type code), the second was mechanically sound but set aside for the
+simpler option. Landed on reusing vanilla Balticrawler's stats/sprite
+wholesale (`MASS: 1→200`, `HEIGHT: 1→5`, `DAMAGE.PIERCE: 0.01→0.2`,
+`RESOURCE_AMOUNT: 0.1→0.5`, sprite `Onx→Balticrawler`) except its cave-
+dwelling traits (kept `LIVES_IN_CAVES: 0`, `TERRAIN: {NONE: 1.0}` -
+shelter comes from `PASTURE_SILKWORM`'s own `INDOORS: true`) and its
+`RESOURCES` list (kept `RAW_SILK`, never `MEAT` - confirmed via source
+that a Pasture's slaughter payout and an animal's natural-death drop are
+both gated strictly on config, with no hardcoded `MEAT` fallback, so
+Silkcrawlers cannot be eaten regardless of other stats copied). Also
+retuned `PASTURE_SILKWORM.txt`'s `BONUS.CLIMATE` (`HOT: 1.2→0.5`,
+`COLD: 0.1→0.15`) to model real *Bombyx mori* temperature sensitivity -
+the animal's own `CLIMATE:` key is confirmed inert for a never-wild-
+spawning species. Full reasoning in
+[06](06_misc_notes.md#silkworm-reskinned-as-a-silkcrawler-balticrawler-alike).
+Build succeeds; in-game verification pending (blocked on reaching the
+relevant tech/resources in a live save).
+
 ## Open questions
 
 See [06_misc_notes.md](06_misc_notes.md#still-unverified-in-game).
