@@ -1,7 +1,7 @@
-** Silkworm Breeder tech line (SILK00-SILK04, SILKt1/t2) mirrors the Globdien/Warbeast
+** Silkcrawler Breeder tech line (SILK00-SILK04, SILKt1/t2) mirrors the Globdien/Warbeast
 ** pasture pattern exactly: unlock node -> Basic -> Tools -> Skilled -> Profficient ->
-** Advanced Tools -> Expert. ICON reuses the placeholder Onx sprite (see animal/SILKWORM.txt)
-** until custom silkworm art is made.
+** Advanced Tools -> Expert. ICON reuses the placeholder Balticrawler sprite (see
+** animal/SILKCRAWLER.txt) until custom silkcrawler art is made.
 __OVERWRITE: true,
 CATEGORY: 2,
 COLOR: 158_101_63,
@@ -1286,7 +1286,7 @@ TECHS: {
 
 			},
 			{
-			BG: 32->animal->Onx->0,
+			BG: 32->animal->Balticrawler->0,
 			SHADOW: 3,
 
 			},
@@ -1301,7 +1301,7 @@ TECHS: {
 			CIVIC_INNOVATION: 10,
 		},
 		UNLOCKS_FACTION: [
-			ROOM_PASTURE_SILKWORM,
+			ROOM_PASTURE_SILKCRAWLER,
 		],
 	},
 	SILK01: {
@@ -1312,7 +1312,7 @@ TECHS: {
 
 			},
 			{
-			BG: 32->animal->Onx->0,
+			BG: 32->animal->Balticrawler->0,
 			SHADOW: 3,
 
 			},
@@ -1330,7 +1330,7 @@ TECHS: {
 			SILK00: 1,
 		},
 		BOOST: {
-			ROOM_PASTURE_SILKWORM>ADD: 0.15,
+			ROOM_PASTURE_SILKCRAWLER>ADD: 0.15,
 		},
 	},
 	SILKt1: {
@@ -1341,7 +1341,7 @@ TECHS: {
 
 			},
 			{
-			BG: 32->animal->Onx->0,
+			BG: 32->animal->Balticrawler->0,
 			SHADOW: 3,
 
 			},
@@ -1359,7 +1359,7 @@ TECHS: {
 			SILK01: 7,
 		},
 		BOOST: {
-			EQUIP_LEVEL_TOOL_PASTURE_SILKWORM>ADD: 1.0,
+			EQUIP_LEVEL_TOOL_PASTURE_SILKCRAWLER>ADD: 1.0,
 		},
 	},
 	SILK02: {
@@ -1370,7 +1370,7 @@ TECHS: {
 
 			},
 			{
-			BG: 32->animal->Onx->0,
+			BG: 32->animal->Balticrawler->0,
 			SHADOW: 3,
 
 			},
@@ -1388,7 +1388,7 @@ TECHS: {
 			SILKt1: 2,
 		},
 		BOOST: {
-			ROOM_PASTURE_SILKWORM>ADD: 0.15,
+			ROOM_PASTURE_SILKCRAWLER>ADD: 0.15,
 		},
 	},
 	SILK03: {
@@ -1399,7 +1399,7 @@ TECHS: {
 
 			},
 			{
-			BG: 32->animal->Onx->0,
+			BG: 32->animal->Balticrawler->0,
 			SHADOW: 3,
 
 			},
@@ -1417,7 +1417,7 @@ TECHS: {
 			SILK02: 10,
 		},
 		BOOST: {
-			ROOM_PASTURE_SILKWORM>ADD: 0.15,
+			ROOM_PASTURE_SILKCRAWLER>ADD: 0.15,
 		},
 	},
 	SILKt2: {
@@ -1428,7 +1428,7 @@ TECHS: {
 
 			},
 			{
-			BG: 32->animal->Onx->0,
+			BG: 32->animal->Balticrawler->0,
 			SHADOW: 3,
 
 			},
@@ -1446,7 +1446,7 @@ TECHS: {
 			SILK03: 7,
 		},
 		BOOST: {
-			EQUIP_LEVEL_TOOL_PASTURE_SILKWORM>ADD: 1.0,
+			EQUIP_LEVEL_TOOL_PASTURE_SILKCRAWLER>ADD: 1.0,
 		},
 	},
 	SILK04: {
@@ -1457,7 +1457,7 @@ TECHS: {
 
 			},
 			{
-			BG: 32->animal->Onx->0,
+			BG: 32->animal->Balticrawler->0,
 			SHADOW: 3,
 
 			},
@@ -1475,7 +1475,7 @@ TECHS: {
 			SILKt2: 2,
 		},
 		BOOST: {
-			ROOM_PASTURE_SILKWORM>ADD: 0.16,
+			ROOM_PASTURE_SILKCRAWLER>ADD: 0.16,
 		},
 	},
 },

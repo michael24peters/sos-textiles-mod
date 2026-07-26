@@ -1,0 +1,133 @@
+** Silkcrawler Breeder: Husbandry category (PASTURE_ is the only room type mapped to Husbandry -
+** see doc/textiles/06_misc_notes.md). Zero-input, like every vanilla pasture - the game
+** engine does not support IN on a pasture INDUSTRY ("Can't declare inputs to a pasture
+** industry", confirmed via crash). Mulberry-feeding is abstracted away, same as how Onx's
+** grazing is abstracted rather than consuming a tracked grass resource.
+** The animal (SILKCRAWLER.txt, formerly SILKWORM.txt) reuses Balticrawler's stats/sprite
+** wholesale - MASS:1 was actually the densest-possible pasture population the engine allows,
+** denser than any vanilla pasture; the reskin fixes both the visual (wandering reads as normal
+** for a creature this size) and the density (Balticrawler's MASS:200 gives ~10x fewer
+** animals/tile). Deliberately NOT reusing Balticrawler's cave-dwelling side - shelter comes
+** from INDOORS:true below alone, matching real silk sheds, not caves. Room/animal/text files
+** and tech UNLOCKS_FACTION/BOOST targets were all renamed SILKWORM->SILKCRAWLER for
+** consistency with the reskin. See doc/textiles/06_misc_notes.md.
+** placeholder art: reusing vanilla Balticrawler pasture sprites until custom silkcrawler-tray art is made
+ICON: {
+	BG: 32->BG->2,
+	FG: 32->animal->Balticrawler->0,
+	OFFX: -2,
+	OFFY: -2,
+	SHADOW: 2,
+},
+RESOURCES: [WOOD,],
+AREA_COSTS: [0.10,],
+MINI_COLOR: 200_190_120,
+ANIMAL: SILKCRAWLER,
+FENCE: WOOD,
+FLOOR: DIRT,
+INDOORS: true,
+ITEMS: [
+	{
+		COSTS: [20,],
+		STATS: [0,0,0,0,],
+	},
+	{
+		COSTS: [20,],
+		STATS: [0,0,1,0,],
+	},
+],
+WORK: {
+	SHIFT_OFFSET: 0.125,
+	SOUND: impact->Dig*,
+	USES_TOOL: true,
+	FULFILLMENT: 0.0,
+	ACCIDENTS_PER_YEAR: 0.002,
+},
+SPRITES: {
+
+	GATE_TOP_3X3: {
+		ROTATES: true,
+		SHADOW_HEIGHT: 8,
+		SHADOW_LENGTH: 0,
+		COLOR: {R: 255, G: 255, B: 255,},
+		FRAMES: [
+			PASTURE_GATE: 0,
+		],
+
+	},
+
+	STORAGE_1X1: {
+		ROTATES: false,
+		SHADOW_HEIGHT: 0,
+		SHADOW_LENGTH: 4,
+		COLOR: {R: 255, G: 255, B: 255,},
+		FRAMES: [
+			STORAGE: 6,
+		],
+	},
+	FENCE_COMBO: {
+		SHADOW_LENGTH: 6,
+		SHADOW_HEIGHT: 2,
+		FRAMES: [
+			FENCE: 3,
+		],
+	},
+	FENCE_D_COMBO: {
+		SHADOW_LENGTH: 6,
+		SHADOW_HEIGHT: 2,
+		FRAMES: [
+			FENCE: 4,
+		],
+	},
+	AUX_BIG_2X2: [
+		{
+			SHADOW_HEIGHT: 9,
+			ROTATES: false,
+			FRAMES: [
+				HUT: 0,
+			],
+		},
+	],
+	AUX_EDGE_1X1: [
+		{
+			SHADOW_HEIGHT: 9,
+			ROTATES: true,
+			FRAMES: [
+				2xROOF: 0,
+			],
+		},
+	],
+	AUX_MID_1X1: [
+		{
+			SHADOW_HEIGHT: 9,
+			ROTATES: true,
+			FRAMES: [
+				2xROOF: 1,
+			],
+		},
+	],
+},
+INDUSTRIES: [
+	{
+		INDUSTRY: {
+			OUT: {
+				RAW_SILK: {
+					PLAYER: 0.5,
+					AI_RATE: 0.5,
+					AI_RECOVERY: 0.5,
+				},
+			},
+		},
+	},
+],
+** BONUS.CLIMATE models real Bombyx mori temperature sensitivity: narrow optimal band
+** (~24-28C), poor cold tolerance, and heat stress/disease risk above ~30-35C - historically
+** cultivated in temperate China, not tropical or arctic. HOT is a penalty here, not a bonus
+** like the old value - excess heat hurts real silk cultivation.
+BONUS: {
+	CLIMATE: {
+		TEMPERATE: 1.0,
+		COLD: 0.15,
+		HOT: 0.5,
+	},
+},

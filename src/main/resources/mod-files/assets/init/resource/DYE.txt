@@ -1,8 +1,7 @@
-** placeholder art: reusing vanilla Herb sprite/icon until custom dye art is made
-ICON: 24->resource->Herb->0,
+ICON: 24->resource->Dye->0,
 DEGRADE_RATE: 0.05,
-COLOR: 60_80_170,
+COLOR: 255_255_255,
 MINIMAP_COLOR: 10_10_10,
-SPRITE: Herb,
+SPRITE: Dye,
 SPRITE_DEBRIS: Wood,
 CATEGORY_DEFAULT: 1,

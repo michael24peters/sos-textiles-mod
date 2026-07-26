@@ -1,0 +1,45 @@
+INFO: {
+	NAME: "Silkcrawler Breeder",
+	NAMES: "Silkcrawler Breeders",
+	DESC: "Raises Silkcrawlers and harvests their cocoons as Raw Silk. Sensitive to temperature, they must be kept sheltered in stable conditions.",
+},
+
+BONUS: {
+	NAME: "Silkcrawler Breeding",
+	DESC: "Makes silkcrawler broods more productive",
+},
+
+WORK: {
+	TITLE: "Breeder",
+	VERB: "Breeding",
+},
+
+STATS: [
+	{
+		NAME: "Workers",
+		DESC: "The amount of workers that will be needed for this area. Rich soils enables more workers and output on a smaller area",
+	},
+	{
+		NAME: "",
+		DESC: "",
+	},
+	{
+		NAME: "",
+		DESC: "",
+	},
+	{
+		NAME: "Output",
+		DESC: "The average amount of resources this pasture will yield daily. This depends on size of the pasture, and the base fertility of the soil.",
+	},
+],
+
+ITEMS: [
+	{
+		NAME: "Gate",
+		DESC: "Entrance and resource storage for pasture.",
+	},
+	{
+		NAME: "Hut",
+		DESC: "Small huts and shacks where the rearing trays are kept.",
+	},
+],

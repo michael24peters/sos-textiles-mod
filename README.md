@@ -1,250 +1,64 @@
-# Songs of Syx Modding Guide and Template for V71
-
-This project is intended for people who want to start modding for the game [Songs of Syx](https://store.steampowered.com/app/1162750/Songs_of_Syx/).
-It contains [documentation](doc/README) on general modding techniques and serves as a starting point if you want to create code mods.
-The automated build pipeline will take care of compiling, packaging and installing the mod into the games mod folder.
-So the game will always load your latest changes you made in your mod without manually copying files.
-
-You will need a **Java 21 JDK** for developing.
-
-## Content
-
-* [General Modding Information](doc/README)
-  * [Mod Folder Structure](doc/README.md#mod-folder-structure) 
-    * [_Info.txt](doc/README.md#_infotxt) 
-    * [Replacing / Overwriting whole vanilla config files](doc/README.md#replacing--overwriting-whole-vanilla-config-files)
-    * [Replacing / Overwriting individual values in a vanilla config file](doc/README.md#replacing--overwriting-individual-values-in-a-vanilla-config-file)
-    * [Adding your own custom config files](doc/README.md#adding-your-own-custom-config-files)
-    * [Removing all vanilla config files from a folder](doc/README.md#removing-all-vanilla-config-files-from-a-folder)
-    * [Supporting multiple game versions](doc/README.md#supporting-multiple-game-versions)
-  * [FAQ](doc/README.md#faq)
-  * [Game Boosters](doc/README.md#game-boosters)
-  * [Scripting / Coding](doc/README.md#scripting--coding)
-    * [In-game Debug and Development Tool](doc/README.md#in-game-debug-and-development-tool)
-    * [Logging](doc/README.md#logging)
-    * [Game and Mod Initialization](doc/README.md#game-and-mod-initialization)
-* [Example Mod Structure](doc/example)
-* [Project Setup](doc/howto/intellij_setup.md)
-* [Getting Started](#getting-started)
-* [Mod SDK (Optional)](#mod-sdk-optional)
-  * [Code](https://github.com/4rg0n/songs-of-syx-mod-more-options/tree/main/mod-sdk)
-  * [Documentation](https://github.com/4rg0n/songs-of-syx-mod-more-options/tree/main/mod-sdk/src/main/java/com/github/argon/sos/mod/sdk#mod-sdk)
-* [Init Config Files Documentation](doc/config/README.md)
-  * [General](doc/config/general.md)
-  * [Animals](doc/config/animal.md)
-  * [Boosters](doc/config/boosters.md)
-  * [Diseases](doc/config/disease.md) 
-  * [Races](doc/config/race.md)
-  * [Religions](doc/config/religion.md)
-  * [Resources](doc/config/resource.md) 
-  * [Rooms](doc/config/room.md)
-* [Make your own Mod](doc/howto/make_your_own_mod.md)
-* [Publish your Mod](#publish-your-mod)
-* [How-to Guides](doc/howto/README)
-  * [Run in Console](doc/howto/run_in_console.md) 
-  * [Add JVM Arguments](doc/howto/jvmargs.md)
-  * [Understand Game Code](doc/howto/game_code.md) 
-  * [Access Game Code](doc/howto/access_game_code.md) 
-  * [Modding Strategy](doc/howto/modding_strategy.md) 
-  * [Add an UI Element](doc/howto/add_ui_element.md)
-  * [Make a Custom Room](doc/howto/make_custom_room.md)
-    * [Via Config](doc/howto/make_custom_room.md#make-a-custom-room-via-config)
-    * [Via Code](doc/howto/make_custom_room.md#make-a-custom-room-via-code)
-* [Explanations](doc/explanation/README.md)
-  * [Combat Mechanics](doc/explanation/combat_mechanics.md)
-  * [Race Sprite Rundown](doc/explanation/race_sprite_rundown.md)
-* [Project Build Commands](#project-build-commands)
-* [Mod Info / Build Settings](#mod-info--build-settings)
-* [Debugging your Mod](#debugging)
-* [Other Modding Resources](#other-modding-resources)
-* [Other Resources](#other-resources)
-* [Java Development Resources](#java-development-resources)
-
-## General Modding Information
-
-See [Documentation](doc/README)
-
-## Setup for Intellij IDEA
-
-See [Setup IntelliJ IDEA](doc/howto/intellij_setup.md)
-
-## Getting Started
-
-:information_source: [Maven](https://maven.apache.org/) is required to compile, package and install the mod.
-When using [IntelliJ IDEA](https://www.jetbrains.com/idea/download/), Maven is already bundled within.
-
-You can run the Maven commands via the `m` icon on the right-hand side in the IntelliJ IDEA UI:
-
-![Maven UI](doc/img/maven.png)
-
-#### 1. (**mvn validate**) Install the game jar file as [local maven dependency](https://www.baeldung.com/maven-local-repository) by copying it from the game installation folder.
-```
-mvn validate 
-```
-
-:information_source: You only have to run `validate` once (or when the games got an update you need)
-
-#### 2. (**mvn install**) Compile mod source code; build jar file; prepare mod file structure; copy mod files and jar to game mod directory
-```
-mvn install 
-```
-
-#### 3. Run the game, and you should see a `Example Mod` mod. Activate it and launch.
-
-# Run the game from within your IDE (IntelliJ IDEA)
-
-There are three different "Run Configurations" in the `.run` folder:
-
-* `DEBUG` for running the game with debug capabilities via the little green bug icon
-* `Main` for running the game and skipping the launcher
-* `MainLaunchLauncher` for running the game with launcher
-
-You may have to *edit the game installation paths* in these files.
-Intellij should automatically recognize these files and add them to your "Run Configuration" selection.
-It is usually found in the upper right-hand corner.
-You can select the command via the dropdown menu and run them with the play icon.
-The green bug icon will run the game with debug capabilities. This will only work with the `DEBUG` run configuration though.
-
-**DEBUG.run.xml**
-```xml
-    <classpathModifications>
-      <entry path="C:\Program Files (x86)\Steam\steamapps\common\Songs of Syx\base\script\Examples.jar" />
-      <entry path="C:\Program Files (x86)\Steam\steamapps\common\Songs of Syx\base\script\Tutorial.jar" />
-      <entry path="$PROJECT_DIR$\target\Example Mod.jar" />
-    </classpathModifications>
-```
-
-For debugging Java code, some additional **classpathModifications** are necessary. 
-These can differ on your system. 
-Also, the name of your built `*.jar` file may be different.
-
-## Mod SDK (Optional)
-
-:information_source: The Mod SDK is still somewhat experimental.
-I'm using it for my [More Options](https://github.com/4rg0n/songs-of-syx-mod-more-options) mod.
-
-To enable it, you have to enable the `mod-sdk` maven profile.
-Here you can find the [code](https://github.com/4rg0n/songs-of-syx-mod-more-options/tree/main/mod-sdk) and [documentation](https://github.com/4rg0n/songs-of-syx-mod-more-options/tree/main/mod-sdk/src/main/java/com/github/argon/sos/mod/sdk#mod-sdk) of it.
-
-:information_source: Be sure to add the [Mod SDK](https://steamcommunity.com/sharedfiles/filedetails/?id=3331182511) as dependency to your mod in the Steam Workshop.
-
-See [Mod SDK Setup](doc/howto/mod_sdk_setup.md)
-
-## Start making your own mod
-
-See [make your own mod](doc/howto/make_your_own_mod.md).
-
-## Publish your Mod
-
-There's a maven profile `mods-uploader` you can use to automatically copy and clean your files into the mod uploader.
-The directory is configurable via the `<game.mod.uploader.directory>` property in the `<profiles>` in the [pom.xml](pom.xml).
-
-Default set to:
-
-* **Windows:** `${user.home}/AppData/Roaming/songsofsyx/mods-uploader`
-* **Linux:** `${user.home}/.local/share/songsofsyx/mods-uploader`
-
-Will copy the mod files into the [Steam Workshop Uploader](https://github.com/VizardAlpha/SteamWorkshopManager/releases/) directory.
-
-```
-mvn install -P mods-uploader
-```
-
-Will remove the mod files from the mod uploader. For updating the mod files.
-
-```
-mvn clean -P mods-uploader
-```
-
-### Steam
-
-* [Steam Workshop Uploader](https://github.com/VizardAlpha/SteamWorkshopManager/releases/)
-
-## How-to Guides
-
-See [How-to Guides](doc/howto/README)
-
-## Project Build Commands
-
-:information_source: Installs only the games `SongsOfSyx.jar` and `info/SongsOfSyx-sources.jar` as a dependency, and validate whether it was successful.
-```
-mvn validate
-```
-
-:warning: This is required or the project won't find the games code.
-
-:information_source: Building the mod only into `target/out`:
-```
-mvn package
-```
-
-The source code of the mod will be copied into e.g. `target/out/songs-of-syx-mod-example/V70/script/_src`.
-
-:information_source: Build and copy the output into the games mods folder (excluding `_src`):
-```
-mvn install
-```
-
-:warning: The game mod folder location varies on each OS.
-There are maven profiles "windows" and "linux". The "windows" profile is the default.
-Maven should detect when you are building on a Linux OS and switch to the "linux" profile (not tested).
-You can force a profile with e.g.
-
-```
-mvn install -P linux
-```
-
-:information_source: Deletes the `target` directory containing the packaged mod files and removes the mod from the games mod directory.
-```
-mvn clean
-```
-
-## Mod Info / Build Settings
-
-In the [pom.xml](pom.xml) you will find `<properties>` where you can change information about the mod.
-There you can also change the `<game.version.major>` property to your used game version.
-The `<game.version.minor>` property is only important when your mod really depends on stuff in this version and isn't compatible with lower versions.
-
-Files (e.g. assets) for the mod are located in `src/main/java/resources/mod-files` and will be copied in the `package` phase.
-
-## Debugging
-
-You can enable **Debug Mode** and **Developer Mode** in the game launcher **settings**.
-You will get more detailed logs and in-game developer tools for testing.
-
-### Eclipse
-
-* Add a new [Run Configuration](https://www.subjectcoach.com/tutorials/detail/contents/beginners-guide-to-eclipse-ide/chapter/working-with-run-configurations).
-* Set the **main class** name to `init.MainLaunchLauncher`.
-* In the tab **Arguments** set the **working directory** to your game installation folder e.g. `C:/Program Files (x86)/Steam/steamapps/common/Songs of Syx`.
-
-### Testing
-
-There's [JUnit 5](https://junit.org/junit5/) with [AssertJ](https://assertj.github.io/doc/) and [Mockito 4](https://site.mockito.org/) for testing your code.
-
-### Developing Tips
-
-See [doc/index.md](doc/README).
-
-## Other Modding Resources
-
-* [Discord](https://discord.com/eacfCuE)
-* [Creating a World Template](https://docs.google.com/document/u/0/d/1dNYN1JvYSVlvEdZ81KyEVwvNRsJGDP-_Xtjk96CWlbs/mobilebasic)
-* [Make a mod](doc/res/MAKE_A_MOD.txt) (OUTDATED)
-* [Script Modding](https://docs.google.com/document/d/1FVOtfr3Y-cxH2Gw-i-OqW3Vbp0MPJp0xSyQ80UoCABE/edit) (OUTDATED)
-* [Modding Guide](https://drive.google.com/file/d/1_OesG68HtJ4CwyHK7M72hQDOaCjeqgqT/view) (OUTDATED)
-
-## Other Resources
-
-* [Songs of Syx Production Graph & Room Planner](https://nobody0.github.io/syx-vis/)
-
-## Java Development Resources
-
-[Java Roadmap](https://roadmap.sh/java) (general overview)
-[Mooc Course](https://java-programming.mooc.fi/) (good when you are unfamiliar with Java)
-[Baeldung]( https://www.baeldung.com/get-started-with-java-series) (more condensed information)
-
-
-
-
-
+# Textiles Mod
+
+This mod adds historically-inspired textile systems. Some of the current game
+systems prevent creating the real-world systems with exactness; likewise,
+a certain level of abstraction is applied with consistency throughout the game
+with which I didn't want to do away.
+
+Much of this textile work was inspired by my readings of *The Fabric of
+Civilization* by Virginia Postrel. I enjoy the simulation aspect of Songs of
+Syx, and having spent some time reading about the ancient world, I felt like
+some important aspects of ancient society were not included, or at least
+abstracted too much for my taste. So I thought I would add in some systems
+that I think slot in well with the existing game.
+
+While real-world textiles and dyes were varied, I tried to simplify where I
+felt there was not enough meaningful difference to justify inclusion. For
+example, I simplified the numerous Plant Fibers -- Hemp, Flax, Cotton -- down
+to just the vanilla Cotton. Likewise, I simplified the numerous Dyes -- Woad,
+Indigo, Madder, Murex -- down to just one Dye resource.
+
+Features include:
+
+- Three textile resources: Cotton, Wool, and Silk
+- Three intermediate resources: Cotton Thread, Wool Thread, and Silk Thread. 
+- One new resource: Dye
+- One new animal: Silkcrawler
+- Two new buildings: Spinner (Refiner), Dyer (Refiner), Silkcrawler Breeder (Husbandry)
+- New crafted resources: Wool Clothes, Fine Clothes, Dyed Clothes, Dyed Fine Clothes
+- New recipes for all these additions in Weaver and Tailor.
+
+Let me know if you run into any bugs, issues, or in-game inconsistencies. This
+is my first time making a mod (and I'm not even that experienced in Songs of
+Syx).
+
+## Process
+
+I will detail each resource process below for clarity. In parentheses are the
+resources between each stage/structure.
+
+- Cotton Farm → (Cotton) → Spinner → (Thread) → Weaver → (Fabric) → Tailor → (Clothes)
+- Onx Pasture → (Wool) → Spinner → (Wool Thread) → Weaver → (Wool Fabric) → Tailor → (Wool Clothes)
+- Silkcrawler Breeder → (Silk) → Weaver → (Silk Fabric) → Tailor → (Fine Clothes)
+- Dye Farm → (Dye Plant) → Dyer → (Dye) 
+
+## Designer's Notes
+
+There are a lot of untested, open questions awaiting feedback. Here's a short list of them:
+
+- Wool and Cotton Clothes both produce Dyed Clothes when processed by Dyer.
+- Naming conventions: 
+  - Cotton Thread → Fabric, but Wool Thread → _Wool_ Fabric
+  - Cotton Fabric → Clothes, but Wool Fabric → _Wool_ Clothes, and Silk Fabric → _Fine_ Clothes
+- The Silkcrawler produces no meat. Seems appropriate from historical context of use case.
+- Game constraints prevent Mulberry Farm → Silk_worm_ breeder (with Mulberry requirements).
+- Silk does not require a Spinner; silk was not historically spun once collected.
+- First time doing assets like this, so they might not be at the same standard as the vanilla assets.
+
+## AI Disclosure
+
+AI was used for initial research of the source code and finding the relevant
+files that needed to be made, modified, and updated. Also used AI for
+documentation and such (except for this current doc you're reading, which was
+written by me). I also periodically had it check my work, though any edits were
+done by hand.

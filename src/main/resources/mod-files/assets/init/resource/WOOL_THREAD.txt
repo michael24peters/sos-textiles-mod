@@ -1,8 +1,7 @@
-** placeholder art: reusing vanilla Cotton sprite/icon until custom wool-thread art is made
-ICON: 24->resource->Cotton->0,
+ICON: 24->resource->WoolThread->0,
 DEGRADE_RATE: 0.05,
-COLOR: 235_235_225,
+COLOR: 255_255_255,
 MINIMAP_COLOR: 10_10_10,
-SPRITE: Cotton,
+SPRITE: WoolThread,
 SPRITE_DEBRIS: Wood,
 CATEGORY_DEFAULT: 1,
