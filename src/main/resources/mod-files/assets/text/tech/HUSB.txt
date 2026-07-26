@@ -6,31 +6,31 @@
 _JSON_ADD: true,
 TECHS: {
 	SILK00: {
-		NAME: "The Silkworm Breeder",
-		DESC: "Unlocks the construction of the Silkworm Breeder",
+		NAME: "The Silkcrawler Breeder",
+		DESC: "Unlocks the construction of the Silkcrawler Breeder",
 	},
 	SILK01: {
-		NAME: "Basic Silkworm Breeding",
-		DESC: "Improves the output of our Silkworm Breeders",
+		NAME: "Basic Silkcrawler Breeding",
+		DESC: "Improves the output of our Silkcrawler Breeders",
 	},
 	SILKt1: {
-		NAME: "Silkworm Breeding Tools",
-		DESC: "Unlocks tools to be equipped for the Silkworm Breeder. Tools must be manually equipped in the workplace.",
+		NAME: "Silkcrawler Breeding Tools",
+		DESC: "Unlocks tools to be equipped for the Silkcrawler Breeder. Tools must be manually equipped in the workplace.",
 	},
 	SILK02: {
-		NAME: "Skilled Silkworm Breeding",
-		DESC: "Improves the output of our Silkworm Breeders",
+		NAME: "Skilled Silkcrawler Breeding",
+		DESC: "Improves the output of our Silkcrawler Breeders",
 	},
 	SILK03: {
-		NAME: "Profficient Silkworm Breeding",
-		DESC: "Improves the output of our Silkworm Breeders",
+		NAME: "Profficient Silkcrawler Breeding",
+		DESC: "Improves the output of our Silkcrawler Breeders",
 	},
 	SILKt2: {
-		NAME: "Advanced Silkworm Breeding Tools",
-		DESC: "Unlocks tools to be equipped for the Silkworm Breeder. Tools must be manually equipped in the workplace.",
+		NAME: "Advanced Silkcrawler Breeding Tools",
+		DESC: "Unlocks tools to be equipped for the Silkcrawler Breeder. Tools must be manually equipped in the workplace.",
 	},
 	SILK04: {
-		NAME: "Expert Silkworm Breeding",
-		DESC: "Improves the output of our Silkworm Breeders",
+		NAME: "Expert Silkcrawler Breeding",
+		DESC: "Improves the output of our Silkcrawler Breeders",
 	},
 },

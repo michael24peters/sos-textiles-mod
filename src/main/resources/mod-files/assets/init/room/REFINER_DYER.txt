@@ -64,6 +64,7 @@ SPRITES: {
 	MAIN_MACHINE_COMBO: [
 		{
 			SHADOW_LENGTH: 12,
+			COLOR: 130_90_190,
 			FRAMES: [
 				REFINER: 4,
 			],
