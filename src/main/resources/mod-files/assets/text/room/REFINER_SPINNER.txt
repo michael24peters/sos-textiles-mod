@@ -1,7 +1,7 @@
 INFO: {
 	NAME: "Spinner",
 	NAMES: "Spinners",
-	DESC: "Spins raw Cotton or Wool into thread. Choose a recipe to run.",
+	DESC: "Spins Cotton or Wool into Thread.",
 },
 
 BONUS: {

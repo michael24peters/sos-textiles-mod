@@ -803,7 +803,7 @@ TECHS: {
 	SPIN01: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->SpinnerThread->0,
 			SHADOW: 3,
 
 			},
@@ -824,7 +824,7 @@ TECHS: {
 	SPIN02: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->SpinnerThread->0,
 			SHADOW: 3,
 
 			},
@@ -848,7 +848,7 @@ TECHS: {
 	SPINu1: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->SpinnerThread->0,
 			SHADOW: 3,
 
 			},
@@ -872,7 +872,7 @@ TECHS: {
 	SPIN03: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->SpinnerThread->0,
 			SHADOW: 3,
 
 			},
@@ -896,7 +896,7 @@ TECHS: {
 	SPIN04: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->SpinnerThread->0,
 			SHADOW: 3,
 
 			},
@@ -920,7 +920,7 @@ TECHS: {
 	SPINu2: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->SpinnerThread->0,
 			SHADOW: 3,
 
 			},
@@ -957,7 +957,7 @@ TECHS: {
 	DYER01: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->DyerVat->0,
 			SHADOW: 3,
 
 			},
@@ -978,7 +978,7 @@ TECHS: {
 	DYER02: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->DyerVat->0,
 			SHADOW: 3,
 
 			},
@@ -1002,7 +1002,7 @@ TECHS: {
 	DYERu1: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->DyerVat->0,
 			SHADOW: 3,
 
 			},
@@ -1026,7 +1026,7 @@ TECHS: {
 	DYER03: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->DyerVat->0,
 			SHADOW: 3,
 
 			},
@@ -1050,7 +1050,7 @@ TECHS: {
 	DYER04: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->DyerVat->0,
 			SHADOW: 3,
 
 			},
@@ -1074,7 +1074,7 @@ TECHS: {
 	DYERu2: {
 		ICON: [
 			{
-			BG: 32->REFINER->4,
+			BG: 32->DyerVat->0,
 			SHADOW: 3,
 
 			},

@@ -1,7 +1,3 @@
-** new civic equip slot for Silk's luxury tier, parallel to vanilla _CLOTHES.txt / JEWELRY.txt.
-** Feeds FINE_CLOTHES (from WORKSHOP_TAILOR_SILK), not raw SILK, so silk goes through the same
-** "raw good -> worn good" tailoring step every other fiber does. STANDING weighted hard toward
-** NOBLE - see doc/textiles/05_integration_and_tech.md and 03_economic_levers.md.
 RESOURCE: FINE_CLOTHES,
 MAX_AMOUNT: 4,
 EXPO: 0.5,

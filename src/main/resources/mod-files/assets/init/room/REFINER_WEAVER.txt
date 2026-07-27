@@ -1,7 +1,3 @@
-** Overwrites vanilla REFINER_WEAVER. Single Weaver, one recipe per fiber (Cotton Thread,
-** Wool Thread, Raw Silk), player picks which to run. Replaces vanilla's direct
-** COTTON->FABRIC recipe - Cotton now goes through the Spinner first like every other
-** fiber. See doc/textiles/04_material_process_chains.md
 __OVERWRITE: true,
 ICON: 32->REFINER->4,
 RESOURCES: [STONE,WOOD,FURNITURE,MACHINERY,],

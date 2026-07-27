@@ -1,6 +1,3 @@
-** partial override: adds the missing ambiance sound keys vanilla logs as
-** "no ambiance sound by the key of: ROOM_<KEY>" for custom rooms.
-** DUMMY matches vanilla's FARM_COTTON / REFINER_WEAVER / PASTURE_ONX (no dedicated ambiance loop).
 ROOM_FARM_DYE: DUMMY,
 ROOM_PASTURE_ONX_WOOL: DUMMY,
 ROOM_PASTURE_SILKCRAWLER: DUMMY,

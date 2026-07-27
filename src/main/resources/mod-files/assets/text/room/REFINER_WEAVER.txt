@@ -1,7 +1,7 @@
 INFO: {
 	NAME: "Weaver",
 	NAMES: "Weavers",
-	DESC: "Weaves Cotton Thread, Wool Thread, or Raw Silk into finished Fabric, Wool Fabric, or Silk. Choose a recipe to run.",
+	DESC: "Weaves Cotton Thread, Wool Thread, or Raw Silk into finished Fabric, Wool Fabric, or Silk.",
 },
 
 BONUS: {

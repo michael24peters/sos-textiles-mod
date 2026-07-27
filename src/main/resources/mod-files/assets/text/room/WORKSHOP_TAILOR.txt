@@ -1,7 +1,7 @@
 INFO: {
 	NAME: "Tailor",
 	NAMES: "Tailors",
-	DESC: "Sews Clothes from Leather, Fabric, Wool Fabric, or Silk, and can dye them with Dye. Also makes Leather Armour. Choose a recipe to run.",
+	DESC: "Sews Clothes from Leather, Fabric, Wool Fabric, or Silk, and can dye them with Dye. Also makes Leather Armour.",
 },
 
 BONUS: {

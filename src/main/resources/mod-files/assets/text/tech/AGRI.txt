@@ -1,8 +1,3 @@
-** _JSON_ADD is required here: without it, this file's top-level TECHS key
-** would wholesale-replace vanilla's TECHS object (wiping GRAI/FRUI/VEGE/
-** COTT/MUSH/HERB/SPIC/OFRU text) instead of merging our new keys into it -
-** confirmed via snake2d.util.file.JsonValue.overwrite() in the decompiled
-** game source.
 _JSON_ADD: true,
 TECHS: {
 	DYEF00: {

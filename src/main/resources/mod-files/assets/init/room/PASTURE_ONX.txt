@@ -1,3 +1,4 @@
+__OVERWRITE: true,
 ICON: {
 	BG: 32->BG->2,
 	FG: 32->animal->Onx->0,
@@ -7,7 +8,7 @@ ICON: {
 },
 RESOURCES: [WOOD,],
 AREA_COSTS: [0.10,],
-MINI_COLOR: 200_200_190,
+MINI_COLOR: 101_124_14,
 ANIMAL: ONX,
 FENCE: WOOD,
 FLOOR: DIRT,
@@ -96,14 +97,14 @@ INDUSTRIES: [
 	{
 		INDUSTRY: {
 			OUT: {
-				WOOL: {
-					PLAYER: 2.5,
-					AI_RATE: 5.0,
+				MEAT: {
+					PLAYER: 0.7,
+					AI_RATE: 1.12,
 					AI_RECOVERY: 0.5,
 				},
-				MEAT: {
-					PLAYER: 0.1,
-					AI_RATE: 0.16,
+				WOOL: {
+					PLAYER: 1.8,
+					AI_RATE: 3.6,
 					AI_RECOVERY: 0.5,
 				},
 				LIVESTOCK: {

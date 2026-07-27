@@ -1,17 +1,3 @@
-** Silkcrawler Breeder: Husbandry category (PASTURE_ is the only room type mapped to Husbandry -
-** see doc/textiles/06_misc_notes.md). Zero-input, like every vanilla pasture - the game
-** engine does not support IN on a pasture INDUSTRY ("Can't declare inputs to a pasture
-** industry", confirmed via crash). Mulberry-feeding is abstracted away, same as how Onx's
-** grazing is abstracted rather than consuming a tracked grass resource.
-** The animal (SILKCRAWLER.txt, formerly SILKWORM.txt) reuses Balticrawler's stats/sprite
-** wholesale - MASS:1 was actually the densest-possible pasture population the engine allows,
-** denser than any vanilla pasture; the reskin fixes both the visual (wandering reads as normal
-** for a creature this size) and the density (Balticrawler's MASS:200 gives ~10x fewer
-** animals/tile). Deliberately NOT reusing Balticrawler's cave-dwelling side - shelter comes
-** from INDOORS:true below alone, matching real silk sheds, not caves. Room/animal/text files
-** and tech UNLOCKS_FACTION/BOOST targets were all renamed SILKWORM->SILKCRAWLER for
-** consistency with the reskin. See doc/textiles/06_misc_notes.md.
-** placeholder art: reusing vanilla Balticrawler pasture sprites until custom silkcrawler-tray art is made
 ICON: {
 	BG: 32->BG->2,
 	FG: 32->animal->Balticrawler->0,
@@ -120,10 +106,6 @@ INDUSTRIES: [
 		},
 	},
 ],
-** BONUS.CLIMATE models real Bombyx mori temperature sensitivity: narrow optimal band
-** (~24-28C), poor cold tolerance, and heat stress/disease risk above ~30-35C - historically
-** cultivated in temperate China, not tropical or arctic. HOT is a penalty here, not a bonus
-** like the old value - excess heat hurts real silk cultivation.
 BONUS: {
 	CLIMATE: {
 		TEMPERATE: 1.0,

@@ -1,7 +1,4 @@
-** placeholder art: reusing vanilla Weaver (loom) furniture sprites until custom fulling-mill art is made
-** extracts pigment from Dye Plants. Lossy 3:1 ratio matches pigment-extraction reality -
-** see doc/textiles/03_economic_levers.md
-ICON: 32->REFINER->4,
+ICON: 32->DyerVat->0,
 RESOURCES: [STONE,WOOD,FURNITURE,MACHINERY,],
 AREA_COSTS: [0,0,0,0,],
 FLOOR: [DIRT,WOOD_SQUARE,WOOD,],
