@@ -39,26 +39,34 @@ resources between each stage/structure.
 
 - Cotton Farm → (Cotton) → Spinner → (Thread) → Weaver → (Fabric) → Tailor → (Clothes)
 - Onx Pasture → (Wool) → Spinner → (Wool Thread) → Weaver → (Wool Fabric) → Tailor → (Wool Clothes)
-- Silkcrawler Breeder → (Silk) → Weaver → (Silk Fabric) → Tailor → (Fine Clothes)
+- Silkcrawler Breeder → (Raw Silk) → Weaver → (Silk) → Tailor → (Fine Clothes)
 - Dye Farm → (Dye Plant) → Dyer → (Dye) 
 
 ## Designer's Notes
 
-There are a lot of untested, open questions awaiting feedback. Here's a short list of them:
+There are a lot of untested, open questions awaiting feedback. Here's a short
+list:
 
 - Wool and Cotton Clothes both produce Dyed Clothes when processed by Dyer.
 - Naming conventions: 
   - Cotton Thread → Fabric, but Wool Thread → _Wool_ Fabric
-  - Cotton Fabric → Clothes, but Wool Fabric → _Wool_ Clothes, and Silk Fabric → _Fine_ Clothes
+  - Cotton Fabric and Wool Fabric → Clothes
+  - Cotton _Fabric_ → Clothes, but Silk → _Fine_ Clothes
 - The Silkcrawler produces no meat. Seems appropriate from historical context of use case.
+  - Currently, hunting a silkcrawler gives you silk.
 - Game constraints prevent Mulberry Farm → Silk_worm_ breeder (with Mulberry requirements).
 - Silk does not require a Spinner; silk was not historically spun once collected.
 - First time doing assets like this, so they might not be at the same standard as the vanilla assets.
+- I tried to minimize new buildings and use new recipes where possible.
 
 ## AI Disclosure
 
 AI was used for initial research of the source code and finding the relevant
-files that needed to be made, modified, and updated. Also used AI for
-documentation and such (except for this current doc you're reading, which was
-written by me). I also periodically had it check my work, though any edits were
-done by hand.
+files that needed to be made, modified, and updated. I tried using AI for
+documentation and such, but it ended up being kind of lengthy for little gain,
+so I stripped out what I could from the config files and wrote the rest myself
+(like this doc you're currently reading, which is written by me). I also
+periodically had AI check my work, though actual edits were done by hand.
+
+All art was drawn in GIMP by me and me alone, using the in-game existing assets
+as a starting point where relevant.

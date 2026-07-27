@@ -1,7 +1,3 @@
-** Silkcrawler Breeder tech line (SILK00-SILK04, SILKt1/t2) mirrors the Globdien/Warbeast
-** pasture pattern exactly: unlock node -> Basic -> Tools -> Skilled -> Profficient ->
-** Advanced Tools -> Expert. ICON reuses the placeholder Balticrawler sprite (see
-** animal/SILKCRAWLER.txt) until custom silkcrawler art is made.
 __OVERWRITE: true,
 CATEGORY: 2,
 COLOR: 158_101_63,

@@ -1,8 +1,3 @@
-** Overwrites vanilla WORKSHOP_TAILOR. Vanilla's 3 recipes (Leather Clothes, Fabric Clothes,
-** Leather Armour - indices 0-2) are kept as-is so existing tech/consumption boosts targeting
-** them by index stay correct. 5 textile recipes are appended at indices 3-7: plain/dyed Wool,
-** plain/dyed Silk, dyed Plant Fibre. Player picks which recipe to run.
-** See doc/textiles/04_material_process_chains.md and 05_integration_and_tech.md
 __OVERWRITE: true,
 ICON: 32->WORKSHOP->9,
 RESOURCES: [STONE,FURNITURE,METAL,],
@@ -110,7 +105,7 @@ INDUSTRIES: [
 			},
 			OUT: {
 				FINE_CLOTHES: {
-					PLAYER: 1.5,
+					PLAYER: 3.0,
 				},
 			},
 		},
@@ -123,7 +118,7 @@ INDUSTRIES: [
 			},
 			OUT: {
 				DYED_FINE_CLOTHES: {
-					PLAYER: 1.5,
+					PLAYER: 3.0,
 				},
 			},
 		},

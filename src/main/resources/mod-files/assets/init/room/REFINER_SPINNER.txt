@@ -1,7 +1,4 @@
-** placeholder art: reusing vanilla Weaver (loom) furniture sprites until custom spinning-wheel art is made
-** single Spinner - one recipe per staple fiber, player picks which to run. Silk isn't spun (reeled), so
-** it has no recipe here - see doc/textiles/04_material_process_chains.md
-ICON: 32->REFINER->4,
+ICON: 32->SpinnerThread->0,
 RESOURCES: [STONE,WOOD,FURNITURE,],
 AREA_COSTS: [0,0,0,],
 FLOOR: [DIRT,WOOD_SQUARE,WOOD,],

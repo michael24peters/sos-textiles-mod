@@ -8,9 +8,6 @@ CLIMATE_BONUS: {
 	HOT: 0.8,
 },
 
-** placeholder art: reusing vanilla Herb growable sprite until custom dye-plant art is made
-** STEM/GROWTH tints copied from vanilla HERB.txt - these are tuned for Herb's sprite
-** geometry, so reuse its own values rather than the old Cotton-tuned ones.
 SPRITE: {
 	SPRITE: Herb,
 	WIND_SWAY: 1,

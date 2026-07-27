@@ -1,6 +1,3 @@
-** the priciest worn good in the whole system - dyed AND silk. Even steeper
-** NOBLE skew than plain _FINE_CLOTHES, since it stacks silk's luxury-lock
-** with dye's status premium. See doc/textiles/03_economic_levers.md.
 RESOURCE: DYED_FINE_CLOTHES,
 MAX_AMOUNT: 4,
 EXPO: 0.5,

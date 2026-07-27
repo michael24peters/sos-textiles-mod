@@ -1484,7 +1484,7 @@ TECHS: {
 
 			},
 			{
-			BG: 24->resource->Herb->0,
+			BG: 24->resource->DyePlant->0,
 			SHADOW: 3,
 
 			},
@@ -1510,7 +1510,7 @@ TECHS: {
 
 			},
 			{
-			BG: 24->resource->Herb->0,
+			BG: 24->resource->DyePlant->0,
 			SHADOW: 3,
 
 			},
@@ -1539,7 +1539,7 @@ TECHS: {
 
 			},
 			{
-			BG: 24->resource->Herb->0,
+			BG: 24->resource->DyePlant->0,
 			SHADOW: 3,
 
 			},
@@ -1568,7 +1568,7 @@ TECHS: {
 
 			},
 			{
-			BG: 24->resource->Herb->0,
+			BG: 24->resource->DyePlant->0,
 			SHADOW: 3,
 
 			},
@@ -1597,7 +1597,7 @@ TECHS: {
 
 			},
 			{
-			BG: 24->resource->Herb->0,
+			BG: 24->resource->DyePlant->0,
 			SHADOW: 3,
 
 			},
@@ -1626,7 +1626,7 @@ TECHS: {
 
 			},
 			{
-			BG: 24->resource->Herb->0,
+			BG: 24->resource->DyePlant->0,
 			SHADOW: 3,
 
 			},
@@ -1655,7 +1655,7 @@ TECHS: {
 
 			},
 			{
-			BG: 24->resource->Herb->0,
+			BG: 24->resource->DyePlant->0,
 			SHADOW: 3,
 
 			},

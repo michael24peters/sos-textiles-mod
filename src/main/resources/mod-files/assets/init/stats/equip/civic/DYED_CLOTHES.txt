@@ -1,6 +1,3 @@
-** new civic equip slot for dyed clothing - a broad status good, not a luxury lock like
-** _FINE_CLOTHES. STANDING is deliberately flat (citizens and nobles both want some) rather
-** than steeply noble-skewed - see doc/textiles/03_economic_levers.md.
 RESOURCE: DYED_CLOTHES,
 MAX_AMOUNT: 6,
 EXPO: 0.5,

@@ -1,7 +1,3 @@
-** wool-focused Onx herd: shares the vanilla Onx animal with PASTURE_ONX, but tuned as a
-** dedicated wool herd instead of a food/hide herd. Vanilla PASTURE_ONX is left untouched -
-** this is an additive sibling room giving the player a real choice between the two herd
-** styles. See doc/textiles/04_material_process_chains.md for the reasoning.
 ICON: {
 	BG: 32->BG->2,
 	FG: 32->animal->Onx->0,

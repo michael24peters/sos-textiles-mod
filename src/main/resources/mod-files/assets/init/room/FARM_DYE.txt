@@ -1,4 +1,3 @@
-** placeholder art: reusing vanilla Herb farm icon until custom dye-plant farm art is made
 ICON: {
 	BG: 32->BG->3,
 	FG: 24->resource->Herb->0,
