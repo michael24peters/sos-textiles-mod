@@ -20,13 +20,14 @@ Indigo, Madder, Murex -- down to just one Dye resource.
 
 Features include:
 
-- Three textile resources: Cotton, Wool, and Silk
-- Three intermediate resources: Cotton Thread, Wool Thread, and Silk Thread. 
+- Three fiber resources: Cotton, Wool, and Raw Silk
+- Two intermediate resources: Cotton Thread, Wool Thread
+- Three fabrics resources: Fabric, Wool Fabric, and Silk
 - One new resource: Dye
 - One new animal: Silkcrawler
-- Two new buildings: Spinner (Refiner), Dyer (Refiner), Silkcrawler Breeder (Husbandry)
-- New crafted resources: Wool Clothes, Fine Clothes, Dyed Clothes, Dyed Fine Clothes
-- New recipes for all these additions in Weaver and Tailor.
+- Three new buildings: Spinner (Refiner), Dyer (Refiner), and Silkcrawler Breeder (Husbandry)
+- New crafted resources: Wool Clothes, Fine Clothes, Dyed Clothes, and Dyed Fine Clothes
+- Corresponding new recipes in existing Weaver and Tailor buildings.
 
 Let me know if you run into any bugs, issues, or in-game inconsistencies. This
 is my first time making a mod (and I'm not even that experienced in Songs of
