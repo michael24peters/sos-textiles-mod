@@ -1,5 +1,7 @@
 # Textiles Mod
 
+NOTE: This mod was made as a test for myself to see what it would take to "complete" a mod. I think the game as is abstracts all the details below well enough, but I thought it would be interesting to explore the feasibility of a more simulation-based approach. In its current state, this mod isn't polished and well-thought out enough for widespread use.
+
 This mod adds historically-inspired textile systems. Some of the current game
 systems prevent creating the real-world systems with exactness; likewise,
 a certain level of abstraction is applied with consistency throughout the game
